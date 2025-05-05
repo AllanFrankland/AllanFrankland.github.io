@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Allan Frankland</title>
+    <title>Allan Frankland</title>
     <link>https://AllanFrankland.github.io.git/</link>
-    <description>Recent content in Home on Allan Frankland</description>
+    <description>Recent content on Allan Frankland</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 05 May 2025 09:12:57 +0100</lastBuildDate>
@@ -13,7 +13,7 @@
       <link>https://AllanFrankland.github.io.git/posts/poetics-i/</link>
       <pubDate>Mon, 05 May 2025 09:12:57 +0100</pubDate>
       <guid>https://AllanFrankland.github.io.git/posts/poetics-i/</guid>
-      <description>&lt;h1 class=&#34;heading&#34; id=&#34;some-context&#34;&gt;&#xD;&#xA;  Some Context&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#some-context&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;For Aristotle, the evolution of human culture is in large part the evolution of &lt;em&gt;technê&lt;/em&gt;.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;We must first point out that poetry (in the Aristotelian sense) does not necessarily refer to what we today think of as literature in verse. The word used by Aristotle is ποιητής (pi.i’tis) which translates to &amp;lsquo;work&amp;rsquo; or &amp;lsquo;creation&amp;rsquo; - this word is used to describe all those products of language from verse to prose to lyric poetry and even treatises of philosophy and science. Poetry is a kind of mimesis and, for Aristotle, mimetic works also include music and painting.&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;some-context&#34;&gt;Some Context&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;For Aristotle, the evolution of human culture is in large part the evolution of &lt;em&gt;technê&lt;/em&gt;.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;We must first point out that poetry (in the Aristotelian sense) does not necessarily refer to what we today think of as literature in verse. The word used by Aristotle is ποιητής (pi.i’tis) which translates to &amp;lsquo;work&amp;rsquo; or &amp;lsquo;creation&amp;rsquo; - this word is used to describe all those products of language from verse to prose to lyric poetry and even treatises of philosophy and science. Poetry is a kind of mimesis and, for Aristotle, mimetic works also include music and painting.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
