@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {1}Integers: An Intuitive Definition}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Addition and Algebra Introduction}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Rules ofAdding Integers}{4}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Socratic Questions}{5}{section.2}%

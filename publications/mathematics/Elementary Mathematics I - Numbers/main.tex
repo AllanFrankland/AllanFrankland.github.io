@@ -1,0 +1,31 @@
+\documentclass[a4paper]{article}
+%========================================
+%========DECLARE DEFINITIONS HERE========
+%========================================
+%\def\nterm {}
+\def\nyear {}
+\def\nmonth{}
+%\def\ncourse {}
+%\def\nnotready {}
+%\def\nauthor {Cited Author}
+%\def\nwork {Cited Work}
+
+\input{preamble.sty}
+
+%========================================
+%========DECLARE DEFINITIONS HERE========
+%========================================
+
+\title{Elementary Matheatics I - Numbers}
+
+\begin{document}
+\counterwithin{lstlisting}{section}         % Listing caption numbering
+\include{frontmatter/title.tex}
+\include{frontmatter/toc.tex}
+%//TODO: This is a to do
+%Front Matter
+\include{mainmatter/Part I/les_01.tex}
+%backmatter
+\include{backmatter/bibliography.tex}
+\include{backmatter/index.tex}
+\end{document}

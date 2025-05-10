@@ -1,0 +1,35 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Math Commands %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Special sets
+\newcommand{\C}{\mathbb{C}}                                     %Complex set
+\newcommand{\N}{\mathbb{N}}                                     %Natural set
+\newcommand{\Q}{\mathbb{Q}}                                     %Quotient set
+\newcommand{\R}{\mathbb{R}}                                     %Real set
+\newcommand{\Z}{\mathbb{Z}}                                     %Integer set
+\newcommand{\PW}[1]{\mathcal{P}(#1)}                            %Power set
+
+% Brackets
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}                %e.g: |a|
+\newcommand{\brak}[1]{\left( #1 \right)}                        %e.g: (a)
+\newcommand{\cbrak}[1]{\left\{#1 \right\}}                      %e.g: {a}
+\newcommand{\sbrak}[1]{\left[#1\right]}                         %e.g: [a]
+\newcommand{\abrak}[1]{\left\langle#1\right\rangle}             %e.g: <a>
+
+% Interval Notations
+\newcommand{\ltlt}[2]{\brak{#1,#2}}                             %e.g: (a,b)
+\newcommand{\ltleq}[2]{\left(#1,#2\right]}                      %e.g: (a,b]
+\newcommand{\leqlt}[2]{\left[#1,#2\right)}                      %e.g: [a,b)
+\newcommand{\leqleq}[2]{\sbrak{a,b}}                            %e.g: [a.b]
+
+% Set Theory
+\newcommand{\sor}[2]{#1 \cup #2}                                %Union
+\newcommand{\sand}[2]{#1 \cap #2}                                %Intersection
+
+%Modify mathematical cdot
+\newcommand*{\Cdot}{{\raisebox{-0.25ex}{\scalebox{1.5}{$\cdot$}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Code Commands %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\lsabrak}[1]{$\left\langle$#1$\right\rangle$}   %Angled brackets for syntax in listings

@@ -1,0 +1,389 @@
+\usepackage{newcommands}
+
+%Titlepage
+\makeatletter
+\ifx \nme\undefined
+  \def\nme{Allan Frankland}
+\else
+\fi
+
+%\author{Based on \nwork\ by \nauthor \\\small Notes taken by \nme}
+\date{\nmonth\ \nyear}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Text generation
+\usepackage[final]{microtype}
+\usepackage[style=numeric-comp,sortcites=true]{biblatex}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[makeindex]{imakeidx}
+\usepackage{caption}
+\usepackage{marginnote}
+\usepackage{mdframed}
+\usepackage{tocloft}
+%Document Generation
+\usepackage{etoolbox}
+\usepackage{xargs}
+%Mathematics Typesetting
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}                  %amsmath extension and bug fixing
+\usepackage{siunitx}
+\usepackage[all]{xy}
+\usepackage{tasks}
+%Mathematics - Tikz
+\usepackage{tikz}
+  \usetikzlibrary{automata, positioning, shapes,arrows,chains,matrix}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+%Tables and Lists
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{tabularx}
+%Graphics support
+\usepackage{graphicx}
+%Colour support
+\usepackage{xcolor}
+%Code typesettig
+\usepackage{listings}
+%Cross referencing
+\usepackage{varioref}
+%Algorithms
+\usepackage{algorithmicx}
+\usepackage{algpseudocodex}
+%ToC link - LOAD LAST
+\usepackage{hyperref}
+
+
+
+\usepackage{needspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Document Generation %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\ifx \nisofficial \undefined
+%    \let\@real@maketitle\maketitle
+%\renewcommand{\maketitle}{\@real@maketitle\begin{center}\begin{minipage}[c]
+%  {0.9\textwidth}\centering\footnotesize
+%  This paper is entirely my own and should not be considered a reliable representation
+%  of the work(s) this paper is based on. This paper is not endorsed by the authors
+%  this work is based on. Any mistakes are surely my own.
+%\end{minipage}\end{center}}
+%\else
+%\fi
+
+%Text formatting
+\setlength{\parskip}{0.1cm}
+\setlength{\parindent}{0.3cm}
+
+%Header formatting
+\pagestyle{fancyplain}
+\lhead{\emph{\nouppercase{\leftmark}}}
+\rhead{}
+
+%Section Formatting
+  \let\stdsection\section
+  \renewcommand\section{\newpage\stdsection}  %Every section is on a new page
+\pgfplotsset{compat=1.15}
+
+%Part styling
+\titleformat{\part}[display]
+  {\Centering\itshape}{\LARGE Part \thepart}{0mm}{\Huge}{}
+\titlespacing*{\part}{0mm}{30mm}{30mm}
+\titleclass{\part}{top}
+
+%Margin syling
+\renewcommand\raggedrightmarginnote{}
+\renewcommand\raggedleftmarginnote{}
+\setlength\marginparwidth{\dimexpr 3cm+10pt+2pt}
+\renewcommand\marginfont{%
+    \normalfont\scriptsize\itshape
+}
+
+% TOC Generation
+\setcounter{tocdepth}{2}
+\cftsetindents{section}{1em}{1em} % Adjust indentation for sections
+\cftsetindents{subsection}{2em}{1.5em} % Adjust indentation for subsections
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % Add dots after sections
+
+%Index Generation
+\makeindex[program=makeindex, columns=2, intoc=false, title=Index]
+\makeindex[program=makeindex, columns=2, intoc=false, name=definition, title=Definitions]
+\fancypagestyle{indexpagestyle}{ % Remove header for the index page
+  \fancyhf{} % Clear header and footer
+  \renewcommand{\headrulewidth}{0pt} % Remove header rule
+}
+
+
+% BibLaTeX
+\bibliography{bibliography}
+\addbibresource{bibliography.bib}
+\AtBeginBibliography{\def\UrlFont{\small\ttfamily}} %Reduces the size of citations
+
+% Hyperref settings
+\hypersetup{pdfborder={0 0 0}, colorlinks=false}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Typewriter font to courier
+\renewcommand\ttdefault{pcr}                            % Sets typewriter font to courier.
+\renewcommand{\tag}{\tag\footnotesize{}}
+
+%Verbatim mode font
+\patchcmd{\@verbatim}
+  {\verbatim@font}
+  {\verbatim@font\footnotesize}
+  {}{}
+
+%\let\oldmarginpar\marginpar
+%  \renewcommand\marginpar[1]{\-\oldmarginpar[\raggedleft\footnotesize #1]%
+%  {\raggedright\footnotesize #1}}
+
+
+\renewcommand{\qedsymbol}{\bfseries{Q.E.D}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Section introduction text
+\newenvironment{introduction}
+{%
+  \begin{minipage}{\textwidth}%
+   \itshape%
+}
+{%
+  \end{minipage}%
+  \par\addvspace{2\baselineskip plus 0.2\baselineskip minus 0.2\baselineskip}%
+}
+
+%Problems environment - Mostly redundant as I have a seperate template for problem
+\newcounter{problemnumber}\setcounter{problemnumber}{1}
+\newcommand{\problem}[2][-1]{
+    \ifnum#1>0
+        \setcounter{problemnumber}{#1}
+    \fi
+    \subsection*{Problem \arabic{problemnumber} -- {#2}}
+    \stepcounter{problemnumber}
+}
+
+\newmdtheoremenv[
+  linecolor=black,
+  linewidth=1pt,
+  topline=false,
+  bottomline=true,
+  rightline=false,
+  leftmargin=5pt,
+  innerleftmargin=0.5em,
+  rightmargin=0pt,
+  innerrightmargin=0pt,
+  innertopmargin=2pt,
+  innerbottommargin=2pt,
+  splittopskip=0.3\topskip,
+  splitbottomskip=0.3\topskip,
+  skipabove=1\topsep]
+{note}{Qestions}
+\renewcommand{\note}{\relax}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Thm Environments %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%Enviroment and styling for theorems
+\newtheoremstyle{genstyle}%
+  {\topsep}% Space above
+  {\topsep}% Space below
+  {\justifying\addtolength{\@totalleftmargin}{1em}
+   \addtolength{\linewidth}{0.0em}
+   \parshape 1 0.0em \linewidth}% Body font
+  {}% Indent amount
+  {\bfseries}% Theorem head font
+  {. }% Punctuation after theorem head
+  {0pt}% Space after theorem head
+  {}% Theorem head spec (empty means normal  )
+
+
+
+%Renew proof enviroment
+\renewenvironment{proof}[1][\itshape{\proofname}]{\par
+  \needspace{5cm}%  Breaks if there is less than 5cm of space left on the page
+  \pushQED{\qed}%
+  \topsep6\p@\@plus6\p@\relax
+  \list{}{\leftmargin=0em
+          \rightmargin=\leftmargin
+          \settowidth{\itemindent}{\itshape#1}%
+          \labelwidth=\itemindent
+          \parsep=0pt \listparindent=\parindent
+  }
+  \item[\hskip\labelsep
+        \itshape
+    #1\@addpunct{.}]\ignorespaces
+}{%
+  \popQED\endlist\@endpefalse
+}
+
+% Theorems
+\theoremstyle{genstyle}
+\newtheorem{axiom}{Axiom}[section]
+  \renewcommand{\theaxiom}{\Roman{axiom}}
+\newtheorem*{cor}{Corollary}
+\newtheorem*{conjecture}{Conjecture}
+%\newtheorem{define}{Definition}[section] % Numbered definition - old version
+\newtheorem{rawdefine}{Definition}[section] % Numbered definition, automatic labelling
+  \NewDocumentEnvironment{define}{ o }
+    {\IfNoValueTF{#1}
+      {\begin{rawdefine}\label{def: \therawdefine}}  % \label{def: [number]}
+      {\begin{rawdefine}[#1]\label{def: \therawdefine}}
+    }
+    {\end{rawdefine}}
+\newtheorem*{ndefine}{Definition} % "Null" definition
+\newtheorem*{eg}{Example}
+\newtheorem*{solution}{Solution}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{notation}{Notation}
+%\newtheorem{thm}{Theorem}[section]
+\newtheorem{rawthm}{Theorem}[section]
+  \NewDocumentEnvironment{thm}{ o }
+    {\IfNoValueTF{#1}
+      {\begin{rawthm}\label{thm: \therawthm}}
+      {\begin{rawthm}[#1]\label{thm: \therawthm}}
+    }
+    {\end{rawthm}}
+
+% Equation Numbering
+\numberwithin{equation}{section}
+
+% Socratic Dialogue
+\newcounter{qacount}
+\renewcommand{\theqacount}{Q\arabic{qacount}}
+
+% QA environment
+\newenvironment{qa}{
+  \begin{list}{}{\leftmargin=1.5em \itemsep=1em \parsep=0pt \topsep=0pt}
+}{
+  \end{list}
+}
+
+% Question command: auto-numbered and optionally referenceable
+\newcommand{\question}[2][]{%
+  \refstepcounter{qacount}%
+  \item[\textbf{\theqacount:}] #2%
+  \ifx&#1&%
+  \else%
+    \label{#1}%
+  \fi
+}
+
+% Answer command: indented and narrower
+\newcommand{\answer}[1]{%
+  \begin{list}{}{\leftmargin=2em \rightmargin=2em \topsep=0pt}
+    \item {\small\itshape #1}
+  \end{list}%
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Colours %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Code environment
+\definecolor{codebackground}{rgb}{0.95, 0.95, 0.95}
+\definecolor{codekeyword}{rgb}{0.616, 0.0627, 0.176}
+\definecolor{codecomment}{rgb}{0.498, 0.557, 0.167}
+
+%Document Styling Colours
+\definecolor{trim}{rgb}{0.616, 0.0627, 0.176}
+\definecolor{genbackground}{rgb}{0.95, 0.95, 0.95}
+\definecolor{sectrim}{rgb}{0.498, 0.557, 0.167}
+
+%Main Colours
+\definecolor{primecol}{RGB}{187, 16, 16}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Code Environment %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareCaptionFormat{listing}{#1#2#3}
+\DeclareCaptionLabelSeparator{}{}
+\captionsetup[lstlisting]{format=listing, labelsep=endash, font={small}, singlelinecheck=false, margin={5.5em, 0pt}}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{codebackground},
+    commentstyle=\color{codecomment},
+    keywordstyle=\color{codekeyword},
+    stringstyle=\color{black},
+    basicstyle=\footnotesize,
+    frame=single,
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    language=c++,
+    xleftmargin=0.5cm,
+    xrightmargin=0.5cm
+}\lstset{style=mystyle, mathescape}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TiKz Templates %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\stripskip}{5}
+\newcommand{\stripwidth}{3}
+\newcommand{\ncomplete}{
+\begin{tikzpicture}[
+  overlay,
+  remember picture,
+  legend/.style={|<->|, gray, font = {\ttfamily}},
+  ncomplete/.style={anchor=center, rotate = -45, font={\sffamily\scshape}}
+]
+  \coordinate (A) at ($ (current page.north east) + (-\stripskip,0) $);
+  \coordinate (A') at ($(A) + (-\stripwidth,0) $);
+
+  \coordinate (B) at ($ (current page.north east) + (0,-\stripskip) $);
+  \coordinate (B') at ($(B) + (0,-\stripwidth) $);
+
+  \fill [red] (A) -- (A') -- (B') -- (B) -- cycle;
+
+  \coordinate (tempA) at ($(A)!.5!(A')$);
+  \coordinate (tempB) at ($(B)!.5!(B')$);
+
+  \node [ncomplete](text) at ($(tempA)!.5!(tempB)$) {\Huge\bfseries{NOT FINISHED}};
+
+  \draw [legend] ($(A) + (0,-.75ex)$) -- ($(A') + (0,-.75ex)$) node [below, midway] {\textbackslash stripwidth};
+  \draw [legend] ($(A) + (0,-.75ex)$) -- ($(current page.north east) + (0,-.75ex)$) node [below, midway] {\textbackslash stripskip};
+\end{tikzpicture}
+}
+\newcommand{\complete}{
+\begin{tikzpicture}[
+  overlay,
+  remember picture,
+  legend/.style={|<->|, gray, font = {\ttfamily}},
+  complete/.style={anchor=center, rotate = -45, font={\sffamily\scshape}}
+]
+  \coordinate (A) at ($ (current page.north east) + (-\stripskip,0) $);
+  \coordinate (A') at ($(A) + (-\stripwidth,0) $);
+
+  \coordinate (B) at ($ (current page.north east) + (0,-\stripskip) $);
+  \coordinate (B') at ($(B) + (0,-\stripwidth) $);
+
+  \fill [green] (A) -- (A') -- (B') -- (B) -- cycle;
+
+  \coordinate (tempA) at ($(A)!.5!(A')$);
+  \coordinate (tempB) at ($(B)!.5!(B')$);
+
+  \node [complete](text) at ($(tempA)!.5!(tempB)$) {\Huge\bfseries{COMPLETED}};
+
+  \draw [legend] ($(A) + (0,-.75ex)$) -- ($(A') + (0,-.75ex)$) node [below, midway] {\textbackslash stripwidth};
+  \draw [legend] ($(A) + (0,-.75ex)$) -- ($(current page.north east) + (0,-.75ex)$) node [below, midway] {\textbackslash stripskip};
+\end{tikzpicture}
+}
+

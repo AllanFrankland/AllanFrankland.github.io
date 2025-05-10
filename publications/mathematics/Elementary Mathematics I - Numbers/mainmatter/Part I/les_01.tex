@@ -1,0 +1,327 @@
+\section{Integers: An Intuitive Definition}
+
+\begin{introduction}
+    We begin with an instuitive definition of the integers. We start by introducing the positive numbers as
+    those numbers most familiar to us and move progressively into the abstract integers.
+\end{introduction}
+
+The most familiar numbers are those used in everyday life
+
+  $$
+    1,2,3,4,\dots
+  $$
+
+called the \textbf{positive numbers}. Another familiar number is
+
+  $$
+    0.
+  $$
+
+Taking together the positives numbers and zero we have what are called the \textbf{natural numbers}
+
+  $$
+    0,1,2,3,\dots
+  $$
+
+These numbers represent only symbols that mean nothing to us until we give them meaning.
+We do this by relating each number to the other on a number-line:
+
+\begin{figure}[h]
+  \centering
+    \begin{tikzpicture}
+      \draw[-] (0,0) -- (5.,0) node[right] {};
+      \foreach \x in {1,2,3,4,}
+      \draw (\x,0.1) -- (\x,-0.1) node[below] {\x};
+      \draw (0,0.1) -- (0,-0.1) node[below] {0};
+    \end{tikzpicture}
+    \caption{Natural Numbers}
+    \label{fig: natural numbers}
+\end{figure}
+
+Each number is placed at equal intervals apart along the line; the distance from $0 \to 1$ is the same as the
+distance from $1 \to 2$ and so forth. We call zero the \textbf{origin} and each number represents its distance
+from the origin; $4$ is that number which is four intervals away from the origin.
+
+If we extend the number-line to the left we get the \textbf{negative integers}\footnote{It is worth noting here
+that 'negative' and 'minus' are often used interchangeably but, following Serge Lange's distate for this mistake,
+I will not be using them to mean the same thing. See Q4.}
+
+\begin{figure}[h]
+  \centering
+    \begin{tikzpicture}
+      \draw[-] (-4,0) -- (4.,0) node[right] {};
+      \foreach \x in {-3,-2,-1,1,2,3,}
+      \draw (\x,0.1) -- (\x,-0.1) node[below] {\x};
+      \draw (0,0.1) -- (0,-0.1) node[below] {0};
+    \end{tikzpicture}
+    \caption{Integers}
+    \label{fig: Integers}
+\end{figure}
+
+and when we take all of these togethers (positive integers, natural numbers, negative integers) we get the
+set\footnote{A technical term representing a concept we are not yet prepared to deal with, but for now
+can be taken to mean 'collection', 'class' or 'species' } of numbers called the \textbf{integers}.
+
+\newpage
+
+\subsection{Addition and Algebra Introduction}
+
+\begin{introduction}
+  Now we move onto performing operations on the integers which enable us to both manipulate the integers and
+  discovers its rules.
+\end{introduction}
+
+Addition is the most fundamental operation we can perform on the integers which involves moving along the
+number-line (in any direction) according to a certain amount, we denote the operation with the $+$ symbol.
+
+Let us begin by adding zero to any number:
+
+$$
+  5 + 0 = 5.
+$$
+
+We don't move left or right and remain precisely where we started. This leads to our first axiom of the integers.
+
+\begin{axiom}{Additive Identity of the Integers}
+
+  Zero added to any number results in that same number.
+
+\end{axiom}
+
+Notice here that we stated this rule using words\footnote{This was actually common before the creation of
+algebraic notation.\textit{The Compendious Book on Calculation by Completion and Balancing} is a 9\textsuperscript{th}
+century algebra text written entirely in prose and is the source of our word 'algebra'.} which makes our rule
+excessively verbose and muddy. It would be convenient to introduce a notation for speaking about any numbers of a set.
+Let us do that by restating our axiom in this new notation
+
+\setcounter{axiom}{0}
+\begin{axiom}{Additive Identity of the Integers}
+
+  For any integer $a$, we have
+  $$
+    0 + a = a.
+  $$
+\end{axiom}
+
+We introduce the letter $a$ to represent any integer; we do not care if its $0$, $1$, $-1442$ or any integer
+you can think of, so long as \textit{it is is an integer} you can replace $a$ with anything and the axiom applies. We
+will use this notation going forward.
+
+\subsection{Rules ofAdding Integers}
+
+\section{Socratic Questions}
+
+\begin{qa}
+  \question{What are these symbols we call numbers?}
+  \answer{
+
+  The symbols themselves $(0, 1, 2,)$ etc are a conventional notation used to represent a understood distance
+  away from the origin. This notation is Arabic, but other notation systems exist such as Roman Numerals , Egyptian,
+  etc. Our numeric system is base-$10$ and \textit{positional} which means we use ten digits $(0$ through $9)$ and
+  the position of a digit in a number represents its \textit{place-value}.
+
+  }
+
+  \question{What does $\dots$ mean?}
+  \answer{
+    This is an ellipsis that is shorthand notation for "and so on" or "so forth". It indicates that
+    continuation of a sequence beyond what is written explicitly. Likewise the line extending past the
+    final number on the number-line plays a similar role
+
+    }
+
+  \question{What is an axiom?}
+  \answer{
+    Axiom is mathematical jargon for a rule that is asserted to be true but not proven. It is an assumption we
+    make from which we then extrapolate new rules. The axioms governing integers for everyday mathematicians are
+    the Peano Axioms, by Giuseppe Peano. Axioms are not empirical claims, but premises and, as such, cannot be
+    disproven in the oridnary sense but can be rejected. A familiar axiom to you that has since been
+    rejected is Euclids axiom that two parallel lines never meet - this is no longer accepted wholesale, such as
+    in the field of non-Euclidean geometry.
+  }
+
+  \question{Why 'minus' and not 'negative'}
+  \answer{
+    I use 'minus' for $-a$ wherever the sign\footnote{'sign' refers to the positivity or negativity of a number} of
+    the value represented by $a$ is ambiguous. Given an integer $a$ the phrase 'negative $a$' carries with it the
+    implication that the value represented by $a$ is negative, that is it exists to the left of zero on the
+    number-line. The phrase 'minus $a$' carries with it no such implication and instead refers to the operation.
+
+    This may sound like a nit-pick but clear nomenclature makes the busy work of mathematics less cumbersome
+    later on when performing large operations and multi-step deductions where such simple mistakes are common.
+  }
+\end{qa}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\section{Mathematics}
+%This template utilises a whole assortment of custom \index{mathematics} commands and
+%enviroments for page structure purposes. The main \index{mathematics!commands} commands
+%can be found in \index{mathematics!newcommands.sty} newcommans.sty and
+%\index{mathematics!Environemnts} theorem environments in preamable.sty.
+%Here is a list of all environments:
+%\begin{proof}
+%  This is a \index{mathematics!Environments!proof} proof environment.
+%\end{proof}
+%\begin{axiom}[descriptor]
+%  This is an \index{mathematics!Environments!!axiom} axiom environment. Numbered using
+%  Roman numerals.
+%\end{axiom}
+%\begin{cor}[descriptor]
+%  This is an \index{mathematics!Environments!corrolary} corollary environment.
+%\end{cor}
+%\begin{conjecture}[descriptor]
+%  This is an \index{mathematics!Environments!conjecture} conjecture environment.
+%\end{conjecture}
+%\begin{define}[descriptor]
+%  This is an \index{mathematics!Environments!define} define environment.
+%\end{define}
+%\begin{ndefine}
+%  This is an unumbered definition environment.
+%\end{ndefine}
+%\begin{eg}
+%  This is an \index{mathematics!Environments!eg} example environment.
+%\end{eg}
+%\begin{solution}
+%  This is an \index{mathematics!Environments!solution} solution environment.
+%\end{solution}
+%\begin{lemma}
+%  This is an \index{mathematics!Environments!lemma} lemma environment.
+%\end{lemma}
+%\begin{notation}
+%  This is an \index{mathematics!Environments!notation} notation environment.
+%\end{notation}
+%\begin{thm}
+%  This is an \index{mathematics!Environments!thm} theorem environment.
+%\end{thm}
+%
+%\subsection{Tables}
+%This template utilises extensive use of table packages for custom and better looking
+%\index{tables} tables.
+%\begin{table}[ht]
+%  \centering
+%  \begin{tabular}{lll}
+%      \toprule
+%      \multicolumn{1}{c@{}}{Law} & \multicolumn{2}{c@{}}{Forms}                                                                                \\
+%      \addlinespace[0pt]
+%      \cmidrule(lr){1-1}\cmidrule{2-3}
+%      Commutative                & $p\wedge q\equiv q\wedge p$                           & $p\vee q\equiv q\vee p$                             \\
+%      Associative                & $(p\wedge q)\wedge r\equiv p\wedge (q\wedge r)$       & $(p\vee q)\vee r\equiv p\vee (q\vee r)$             \\
+%      Distributive               & $p\wedge (q\vee r)\equiv (p\wedge q)\vee (p\wedge r)$ & $p\vee (q\wedge r)\equiv (p\vee q)\wedge (p\vee r)$ \\
+%      Identity                   & $P\wedge t\equiv p$                                   & $p\vee c\equiv p$                                   \\
+%      Negation                   & $p\vee\neg p\equiv t$                                 & $p\wedge\neg p = c$                                 \\
+%      Double negative            & $\neg(\neg p)\equiv p$                                &                                                     \\
+%      Indempotent                & $p\wedge p\equiv p$                                   & $p\vee p\equiv p$                                   \\
+%      Universal bound            & $p\vee t\equiv t$                                     & $p\wedge c \equiv c$                                \\
+%      De Morgan's                & $\neg(p\wedge q)\equiv \neg p\vee \neg q$             & $\neg(p\vee q)\equiv \neg p \wedge \neg q$          \\
+%      Absorption                 & $p\vee(p\wedge q)\equiv p$                            & $p\wedge(p\vee q)\equiv p$                          \\
+%      Negation of $t$ and $c$    & $\neg t=c$                                            & $\neg c = t$                                        \\
+%      \bottomrule
+%  \end{tabular}
+%  \caption{Laws of Logic}
+%  \label{table: Laws of Logic}
+%\end{table}
+%
+%\section{Referencing}
+%Utilising the varioref package this template can have intelligent \index{cross references}
+%cross references. The command vref can be used for intelligent references that will
+%automatically change within the context of the template. For example: See
+%\vref{table: Laws of Logic} for laws of logic.
+%
+%Likewise I also use \index{Bibtex} Bibtex for reference buildine, for example: Einstein was
+%cool\cite{OSullivan2009}. Note that all cross-references, references and table of content
+%sections are clickable and allow you to jump to these sections and or references.
+%
+%The (numbered) \verb|Theorem| and \verb|Definition| environments support automatic
+%labelling. For example definition \vref{def: 2.1} is labelled indirectly via
+%the definition of its environment. We can also reference theorems like the theorem
+%\vref{thm: 2.1}.
+%
+%\index{cross references!Equations} Equations are listed by section, for example:
+%\begin{equation}\label{eq: 3.1}
+%  a + b = b + a.
+%\end{equation}
+%
+%The equation \vref{eq: 3.1}\footnote{Notice that the vref is clickable and will send you to
+%the equation it references} is the definition of the commutative property.
+%
+%\section{Code}
+%This template supports a custon \index{code} code environenment that supports c++ highlighting
+%by default:
+%\begin{lstlisting}[]
+%  #include <cstdlib>
+%  #include <ctime>
+%  #include <iostream>
+%  using namespace std;
+%  double doubleRand( ) {
+%    return double(rand( )) / (double(RAND_MAX) + 1.0);
+%  }
+%  int main( ) {
+%    srand(static_cast<unsigned int>(clock( )));
+%    cout << "expect 5 numbers within the interval [0.0, 1.0)" << endl;
+%    for (int i=0; i < 5; i++) {
+%      cout << doubleRand( ) << "\n";
+%    }
+%  cout << endl;
+%}
+%\end{lstlisting}
+%
+%\section{Indexing}
+%This template supports \index{indexing} index. The package \verb|imakeidx| is used to build
+%the index - \verb|makeindex| in the preamable - and we use \verb|\printindex| located within
+%\verb|backmatter/index.tex| to print the index wherever in our document we wish to print it.
+%Note that use of \verb|\index{key}| will mean that \verb|key| does not show up in the
+%final version; you effectively need to write \verb|\index{key} key| to have the \verb|key|
+%appear in text. s
+%
+%The \verb|imakeidx| package has some key useful \index{indexing!commands} commands:
+%
+%\begin{itemize}
+%  \item \verb|\index{key}| - Adds the \verb|key| to the index, the \verb|key| is any line
+%        of text
+%  \item \verb|\index{pkey!ckey} - Adds \verb|ckey| to the index as a child of \verb|pkey|,
+%        where \verb|pkey| has already been added to the index.
+%  \item \verb~\index{key|textbf}~ - Adds the current page number to \verb|key| in the index,
+%        allows for indexing a single \verb|key| on multiple pages.
+%\end{itemize}
+%
+%The template also supports multiple indexes, for exaple you can have a seperate index
+%for defintiions:\index[definition]{Commutativity}
+%\begin{define}[Commutativity]
+%  \[
+%    a + b = b + a
+%  \]
+%\end{define}
