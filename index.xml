@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Welcome on Allan Frankland</title>
-    <link>https://allanFrankland.github.io.git/</link>
+    <link>https://allanFrankland.github.io/</link>
     <description>Recent content in Welcome on Allan Frankland</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 10 May 2025 09:12:49 +0100</lastBuildDate>
-    <atom:link href="https://allanFrankland.github.io.git/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://allanFrankland.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Elementary Mathematics I - Numbers</title>
-      <link>https://allanFrankland.github.io.git/publications/mathematics/test/</link>
+      <link>https://allanFrankland.github.io/publications/mathematics/test/</link>
       <pubDate>Sat, 10 May 2025 09:12:49 +0100</pubDate>
-      <guid>https://allanFrankland.github.io.git/publications/mathematics/test/</guid>
-      <description>&lt;iframe src=&#34;https://allanFrankland.github.io.git/pdfs/main.pdf&#34; width=&#34;100%&#34; height=&#34;800px&#34;&gt;&#xA;    &lt;p&gt;Your browser does not support iframes. &lt;a href=&#34;https://allanFrankland.github.io.git/pdfs/main.pdf&#34;&gt;Download the PDF&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/iframe&gt;</description>
+      <guid>https://allanFrankland.github.io/publications/mathematics/test/</guid>
+      <description>&lt;iframe src=&#34;https://allanFrankland.github.io/pdfs/main.pdf&#34; width=&#34;100%&#34; height=&#34;800px&#34;&gt;&#xA;    &lt;p&gt;Your browser does not support iframes. &lt;a href=&#34;https://allanFrankland.github.io/pdfs/main.pdf&#34;&gt;Download the PDF&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/iframe&gt;</description>
     </item>
     <item>
       <title>Poetics I</title>
-      <link>https://allanFrankland.github.io.git/posts/poetics-i/</link>
+      <link>https://allanFrankland.github.io/posts/poetics-i/</link>
       <pubDate>Mon, 05 May 2025 09:12:57 +0100</pubDate>
-      <guid>https://allanFrankland.github.io.git/posts/poetics-i/</guid>
+      <guid>https://allanFrankland.github.io/posts/poetics-i/</guid>
       <description>&lt;h1 class=&#34;heading&#34; id=&#34;some-context&#34;&gt;&#xD;&#xA;  Some Context&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#some-context&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;For Aristotle, the evolution of human culture is in large part the evolution of &lt;em&gt;technê&lt;/em&gt;.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;We must first point out that poetry (in the Aristotelian sense) does not necessarily refer to what we today think of as literature in verse. The word used by Aristotle is ποιητής (pi.i’tis) which translates to &amp;lsquo;work&amp;rsquo; or &amp;lsquo;creation&amp;rsquo; - this word is used to describe all those products of language from verse to prose to lyric poetry and even treatises of philosophy and science. Poetry is a kind of mimesis and, for Aristotle, mimetic works also include music and painting.&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>https://allanFrankland.github.io.git/publications/mathematics/elementary-mathematics-i---numbers/readme/</link>
+      <link>https://allanFrankland.github.io/publications/mathematics/elementary-mathematics-i---numbers/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://allanFrankland.github.io.git/publications/mathematics/elementary-mathematics-i---numbers/readme/</guid>
+      <guid>https://allanFrankland.github.io/publications/mathematics/elementary-mathematics-i---numbers/readme/</guid>
       <description>&lt;h1 class=&#34;heading&#34; id=&#34;lecture-notes-template&#34;&gt;&#xD;&#xA;  Lecture Notes Template&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#lecture-notes-template&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;This is a simple template for designing lecture notes that supports extensive mathematics, tikz, tables and&#xA;coding environments.&lt;/p&gt;</description>
     </item>
   </channel>
